@@ -19,7 +19,7 @@ def load_lego_data(filename):
             for i, line in enumerate(lines):
                 line = line.strip()
                 if not line:
-                    continue  # skip empty lines
+                    continue
                 parts = line.split(",")
 
                 if len(parts) != 5:
@@ -31,7 +31,6 @@ def load_lego_data(filename):
                 rrp = float(parts[3].strip())
                 in_stock = int(parts[4].strip())
 
-                # Additional validation
                 if in_stock not in (0, 1):
                     raise ValueError(f"Invalid stock value on line {i + 1}: {line}")
 
